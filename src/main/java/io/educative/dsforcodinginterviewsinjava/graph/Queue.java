@@ -22,7 +22,11 @@ public class Queue<V> {
         currentSize = 0;
     }
 
-    public int getMaxSize() {
+  public Queue() {
+
+  }
+
+  public int getMaxSize() {
         return maxSize;
     }
 

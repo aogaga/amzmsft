@@ -2,6 +2,7 @@ package io.educative.dsforcodinginterviewsinjava.graph;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 
 public class CheckBFS {
@@ -77,5 +78,37 @@ public class CheckBFS {
         }
 
            return result;
+    }
+
+    public static String bfs3(Graph g){
+        StringBuilder sb = new StringBuilder();
+        HashMap<Integer, Boolean> visited = new HashMap<>();
+
+        for(int i = 0; i < g.vertices; i++){
+           DoublyLinkedList<Integer> tmp = null;
+
+           //System.out.println(i);
+           if(visited.containsKey(i)){
+               tmp = g.adjacencyList[i];
+           }else{
+               visited.put(i, true);
+               sb.append(i);
+               tmp = g.adjacencyList[i];
+           }
+
+           Node<Integer> currentNode = tmp.headNode;
+           while(currentNode != null){
+               if(!visited.containsKey(currentNode.data)){
+                   visited.put(currentNode.data, true);
+
+                   sb.append(currentNode.data);
+
+               }
+
+               currentNode = currentNode.nextNode;
+           }
+        }
+
+      return sb.toString();
     }
 }

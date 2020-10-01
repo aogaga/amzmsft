@@ -94,4 +94,75 @@ class CheckDFS {
 
         return result;
     }
+
+    public static String dfs3(Graph g){
+        StringBuilder sb = new StringBuilder();
+        java.util.Stack<Integer> stack = new java.util.Stack<>();
+        HashMap<Integer, Boolean> visited = new HashMap<>();
+
+
+        for(int i = 0; i < g.vertices; i++ ){
+
+            if(!visited.containsKey(i)){
+                visited.put(i, true);
+                stack.push(i);
+
+            }
+
+            while(!stack.empty()){
+                int curval = stack.pop();
+                sb.append(curval);
+                visited.put(curval, true);
+
+                Node<Integer> currentNode = g.adjacencyList[curval].headNode;
+
+                while(currentNode != null){
+                    if(!visited.containsKey(currentNode.data)){
+                        stack.push(currentNode.data);
+                    }
+
+                    currentNode = currentNode.nextNode;
+                }
+
+
+            }
+
+
+
+        }
+
+        return sb.toString();
+    }
+
+    public static String dfs4(Graph g){
+        StringBuilder sb = new StringBuilder();
+        HashMap<Integer, Boolean> visits = new HashMap<>();
+        java.util.Stack<Integer> nodeStacks =  new java.util.Stack<>();
+
+        for(int i = 0; i < g.vertices; i++){
+            if(!visits.containsKey(i)){
+                nodeStacks.push(i);
+            }
+
+            while (!nodeStacks.isEmpty()){
+                int currval = nodeStacks.pop();
+                sb.append(currval);
+                visits.put(currval, true);
+
+                Node<Integer> currentNode = g.adjacencyList[currval].headNode;
+
+                while(currentNode != null){
+                    if(!visits.containsKey(currentNode.data)){
+                        nodeStacks.push(currentNode.data);
+                    }
+
+                    currentNode = currentNode.nextNode;
+                }
+
+            }
+        }
+
+        return sb.toString();
+    }
+
 }

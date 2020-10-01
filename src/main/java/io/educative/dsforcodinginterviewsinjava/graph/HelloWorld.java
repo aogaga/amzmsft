@@ -12,7 +12,11 @@ public class HelloWorld {
         g.printGraph();
         System.out.println("DFS traversal of Graph1 : " + CheckDFS.dfs(g));
         System.out.println();
-        System.out.println(CheckDFS.dfs2(g));
+        //System.out.println(CheckDFS.dfs2(g));
+
+
+        System.out.println("=============3++++++++++++++++++++");
+        System.out.println(CheckDFS.dfs3(g));
 
         Graph g2 = new Graph(5);
         g2.addEdge(0,1);
@@ -22,16 +26,20 @@ public class HelloWorld {
         System.out.println("Graph2:");
         g2.printGraph();
         System.out.println("DFS traversal of Graph2 : " + CheckDFS.dfs(g2));
-        System.out.println(CheckDFS.dfs2(g2));
+        //System.out.println(CheckDFS.dfs2(g2));
+
+
+        System.out.println("=============3++++++++++++++++++++");
+        System.out.println(CheckDFS.dfs4(g2));
 
 
 
         System.out.println("--------------==================================-------------------");
-      //System.out.println(CheckBFS.bfs(g));
-
-       //System.out.println(CheckBFS.bfs2(g));
-
-
+//      System.out.println(CheckBFS.bfs(g));
+//
+//       System.out.println(CheckBFS.bfs2(g));
+//
+//        System.out.println(CheckBFS.bfs3(g));
         
     }
 }
